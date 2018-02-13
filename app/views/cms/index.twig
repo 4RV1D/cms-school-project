@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>H1Z1 Referral - CMS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="{{ base_url() }}/assets/css/trumbowyg/trumbowyg.min.css">
+    <link rel="stylesheet" href="{{ base_url() }}/assets/css/style-cms.css">
+  </head>
+  <body>
+
+    <div id="cms">
+      {% block main %}{% endblock %}
+    </div>
+
+    <script src="https://use.fontawesome.com/febb14cc2a.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="{{ base_url() }}/assets/js/trumbowyg/trumbowyg.min.js"></script>
+    <script src="{{ base_url() }}/assets/js/trumbowyg/langs/sv.min.js"></script>
+    <script src="{{ base_url() }}/assets/js/app.js"></script>
+    <script type="text/javascript">
+      $.trumbowyg.svgPath = '{{ base_url() }}/assets/css/trumbowyg/icons.svg';
+
+      $('textarea').trumbowyg({
+        lang: 'sv'
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+//out: ../style-cms.css
+//main: cms.less
+
+@import "config";
+
+body {
+  margin: 0 auto;
+  background: @background2;
+  font-family: @text-font;
+}
+
+.container {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+nav {
+  background: @background1;
+  margin-top: 25px;
+  padding: 10px;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+
+    li {
+      padding: 10px;
+
+      a {
+        font-size: 1.3rem;
+        font-weight: 700;
+        text-decoration: none;
+        color: @fontcolor;
+      } a:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+#cms {
+
+  #list {
+
+    .products {
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+
+      .product {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        background: darken(@background1, 5%);
+        margin-bottom: 10px;
+        margin-top: 10px;
+        padding: 15px;
+        border-radius: 7px;
+
+        h2, p {margin: 5px;}
+        p {font-style: italic; margin-bottom: 20px;}
+        hr {border: 1px solid @background-dark; opacity: .5;}
+        .text {padding: 20px;}
+      }
+    }
+  }
+
+  #create {
+
+  }
+
+  #edit {
+
+
+    .sub_categories {
+      position: relative;
+      top: -140px
+    }
+
+  }
+
+  input[type=text] {
+    width: 40%;
+    height: 20px;
+    padding: 7px;
+    margin-bottom: 15px;
+    border: 0px;
+    border-bottom: 2px solid #222;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  } input[type=text]:focus {
+    outline: 0px;
+  }
+
+  select {
+    width: 41%;
+    height: 35px;
+    padding: 7px;
+    margin-bottom: 15px;
+    border: 0px;
+    border-bottom: 2px solid #222;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  } select:focus {
+    outline: 0px;
+  }
+
+  .btn {
+    background: #3498db;
+    padding: 12px;
+    border-radius: 7px;
+    border: 0px;
+    color: @light-font;
+    font-size: .9rem;
+    transition: background .3s;
+    cursor: pointer;
+    text-decoration: none;
+  } .btn:hover {
+    background: #2980b9;
+  }
+
+  #delete-btn {
+    background: #e74c3c;
+  } #delete-btn:hover {
+    background: #c0392b;
+  }
+
+  #close-btn {
+    background: #95a5a6;
+  } #close-btn:hover {
+    background: #7f8c8d;
+  }
+
+  .error {
+    color: #e74c3c;
+  }
+
+  .cms {
+    background: @background1;
+    margin-top: 25px;
+    padding: 25px;
+  }
+}
