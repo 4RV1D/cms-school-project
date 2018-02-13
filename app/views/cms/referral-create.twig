@@ -1,0 +1,63 @@
+{% extends 'cms/index.twig' %}
+
+{% block main %}
+  <div class="container">
+    <div id="create" class="cms">
+
+      <h1>Lägg till Referral</h1>
+
+      <form class="" action="{{ path_for('cms-create') }}" method="post" autocomplete="off">
+
+        <p class="error"><strong>{{ errors }}</strong></p>
+
+        <label>Referral Namn: </label>
+        <br><input type="text" name="title"><br>
+
+        <label>Beskrivning: </label>
+        <br><input type="text" name="desc"><br>
+
+        <label>Bild: </label>
+        <br><input type="text" name="image"><br>
+
+        <label>Webb Address: </label>
+        <br><input type="text" name="site_url"><br>
+
+        <label>Referral Kod: </label>
+        <br><input type="text" name="referral_code"><br>
+
+        <label>Pengar: </label>
+        <br><input type="text" name="money"><br>
+
+        <label>Minimum: </label>
+        <br><input type="text" name="minimum" value=""><br>
+
+        <label>Commission: </label>
+        <br><input type="text" name="commission" value=""><br>
+
+        <label>Discount: </label>
+        <br><input type="text" name="discount" value=""><br>
+
+        <label>Kategori: </label><br>
+        <select name="category">
+          <option value="1">Betting</option>
+          <option value="2">Case opening</option>
+          <option value="3">Trade Bots</option>
+          <option value="4">Trade Sites</option>
+          <option value="5">Marketplaces</option>
+          <option value="6">Misc</option>
+        </select><br>
+
+        <label>Sub Kategori (endast betting): </label><br>
+        <select name="sub_category">
+          <option value="1">Blackjack</option>
+          <option value="2">Coinflip</option>
+          <option value="3">Jackpot</option>
+        </select><br>
+
+        <input type="submit" name="submit" value="Lägg till" class="btn">
+        <a href="{{ path_for('cms') }}" class="btn" id="close-btn">Stäng (spara inte)</a>
+
+      </form>
+    </div>
+  </div>
+{% endblock %}

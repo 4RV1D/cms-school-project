@@ -1,0 +1,106 @@
+{% extends 'cms/index.twig' %}
+
+{% block main %}
+
+  <nav>
+    <ul>
+      <li><a id="betting-cms">Betting</a></li>
+      <li><a id="case-cms">Case opening</a></li>
+      <li><a id="trading-cms">Trade bots</a></li>
+      <li><a id="trading2-cms">Trade sites</a></li>
+      <li><a id="market-cms">Market</a></li>
+      <li><a id="misc-cms">Misc</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <div id="list" class="cms">
+
+      <a href="{{ path_for('cms-create') }}" id="create-btn" class="btn">Lägg Till Referral</a>
+      <br><br>
+
+      <div class="products">
+
+        {% for referral_10 in referrals_10 %}
+          <div
+          {% if referral_10.category == 1 %}
+            class="product betting"
+
+          {% elseif referral_10.category == 2 %}
+            class="product case"
+
+          {% elseif referral_10.category == 3 %}
+            class="product trading"
+
+          {% elseif referral_10.category == 4 %}
+            class="product trading2"
+
+          {% elseif referral_10.category == 5 %}
+            class="product market"
+
+          {% elseif referral_10.category == 6 %}
+            class="product misc"
+
+          {% endif %}
+          >
+            <div class="image">
+              <img src="{{ referral_10.preview }}" alt="preview" width="200px">
+            </div>
+            <div class="text">
+              <h2>{{ referral_10.title }}</h2>
+              <hr>
+              <h3>Top 10: {{ referral_10.top_10 }}</h3>
+              <p>{{ referral_10.info | raw }}</p>
+              <a href="{{ path_for('cms-edit') }}?id={{ referral_10.id }}" id="edit-btn" class="btn">Ändra</a>
+              <a href="{{ path_for('cms-delete') }}?id={{ referral_10.id }}" id="delete-btn" class="btn">Tabort</a>
+            </div>
+
+          </div>
+
+        {% endfor %}
+
+        {% for referral in referrals %}
+          <div
+          {% if referral.category == 1 %}
+            class="product betting"
+
+          {% elseif referral.category == 2 %}
+            class="product case"
+
+          {% elseif referral.category == 3 %}
+            class="product trading"
+
+          {% elseif referral.category == 4 %}
+            class="product trading2"
+
+          {% elseif referral.category == 5 %}
+            class="product market"
+
+          {% elseif referral.category == 6 %}
+            class="product misc"
+
+          {% endif %}
+          >
+            <div class="image">
+              <img src="{{ referral.preview }}" alt="preview" width="200px">
+            </div>
+            <div class="text">
+              <h2>{{ referral.title }}</h2>
+              <hr>
+              <h3>Top 10: {{ referral.top_10 }}</h3>
+              <p>{{ referral.info | raw }}</p>
+              <a href="{{ path_for('cms-edit') }}?id={{ referral.id }}" id="edit-btn" class="btn">Ändra</a>
+              <a href="{{ path_for('cms-delete') }}?id={{ referral.id }}" id="delete-btn" class="btn">Tabort</a>
+            </div>
+
+          </div>
+
+        {% endfor %}
+
+      </div>
+
+      <br>
+
+    </div>
+  </div>
+{% endblock %}

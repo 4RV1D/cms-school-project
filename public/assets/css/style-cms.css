@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900|Montserrat:400,700,900|Open+Sans:400,700,800|Roboto:400,700,900|Slabo+27px');
+body {
+  margin: 0 auto;
+  background: #e3e9ea;
+  font-family: 'Open Sans', sans-serif;
+}
+.container {
+  width: 1280px;
+  margin: 0 auto;
+}
+nav {
+  background: #fff;
+  margin-top: 25px;
+  padding: 10px;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+nav ul li {
+  padding: 10px;
+}
+nav ul li a {
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #222;
+}
+nav ul li a:hover {
+  text-decoration: underline;
+}
+#cms #list .products {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-flow: wrap;
+}
+#cms #list .products .betting,
+#cms #list .products .case,
+#cms #list .products .trading,
+#cms #list .products .trading2,
+#cms #list .products .market,
+#cms #list .products .misc {
+  display: none;
+}
+#cms #list .products .product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  background: #f2f2f2;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 7px;
+}
+#cms #list .products .product h2,
+#cms #list .products .product p {
+  margin: 5px;
+}
+#cms #list .products .product p {
+  font-style: italic;
+  margin-bottom: 20px;
+}
+#cms #list .products .product hr {
+  border: 1px solid #1F2124;
+  opacity: .5;
+}
+#cms #list .products .product .text {
+  padding: 20px;
+}
+#cms #edit .sub_categories {
+  position: relative;
+  top: -140px;
+}
+#cms input[type=text] {
+  width: 40%;
+  height: 20px;
+  padding: 7px;
+  margin-bottom: 15px;
+  border: 0px;
+  border-bottom: 2px solid #222;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+#cms input[type=text]:focus {
+  outline: 0px;
+}
+#cms select {
+  width: 41%;
+  height: 35px;
+  padding: 7px;
+  margin-bottom: 15px;
+  border: 0px;
+  border-bottom: 2px solid #222;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+#cms select:focus {
+  outline: 0px;
+}
+#cms .btn {
+  background: #3498db;
+  padding: 12px;
+  border-radius: 7px;
+  border: 0px;
+  color: #DBF2F5;
+  font-size: .9rem;
+  transition: background .3s;
+  cursor: pointer;
+  text-decoration: none;
+}
+#cms .btn:hover {
+  background: #2980b9;
+}
+#cms #delete-btn {
+  background: #e74c3c;
+}
+#cms #delete-btn:hover {
+  background: #c0392b;
+}
+#cms #close-btn {
+  background: #95a5a6;
+}
+#cms #close-btn:hover {
+  background: #7f8c8d;
+}
+#cms .error {
+  color: #e74c3c;
+}
+#cms .cms {
+  background: #fff;
+  margin-top: 25px;
+  padding: 25px;
+}

@@ -1,0 +1,76 @@
+{% extends 'cms/index.twig' %}
+
+{% block main %}
+  <div class="container">
+    <div id="edit" class="cms">
+      <h1>Ändra Referral</h1>
+      <form class="" action="{{ path_for('cms-edit') }}" method="post">
+
+        <p class="error"><strong>{{ errors }}</strong></p>
+
+        <label>Produkt Namn:</label><br>
+        <input type="text" name="title" value="{{ title }}"><br>
+
+        <label>Beskrivning:</label><br>
+        <input type="text" name="desc" value="{{ info }}"><br>
+
+        <label>Bild:</label><br>
+        <input type="text" name="image" value="{{ preview }}"><br>
+
+        <label>Webb Address: </label>
+        <br><input type="text" name="site_url" value="{{ site_url }}"><br>
+
+        <label>Referral Kod: </label>
+        <br><input type="text" name="referral_code" value="{{ referral_code }}"><br>
+
+        <label>Pengar: </label>
+        <br><input type="text" name="money" value="{{ money }}"><br>
+
+        <label>Minimum: </label>
+        <br><input type="text" name="minimum" value="{{ minimum }}"><br>
+
+        <label>Commission: </label>
+        <br><input type="text" name="commission" value="{{ commission }}"><br>
+
+        <label>Discount: </label>
+        <br><input type="text" name="discount" value="{{ discount }}"><br>
+
+        <label>Top 10: </label><br>
+        <select name="top_10">
+          <option value="0">Nej</option>
+          <option value="1" {% if top_10 == 1 %}selected="selected"{% endif %}>Plats: 1</option>
+          <option value="2" {% if top_10 == 2 %}selected="selected"{% endif %}>Plats: 2</option>
+          <option value="3" {% if top_10 == 3 %}selected="selected"{% endif %}>Plats: 3</option>
+          <option value="4" {% if top_10 == 4 %}selected="selected"{% endif %}>Plats: 4</option>
+          <option value="5" {% if top_10 == 5 %}selected="selected"{% endif %}>Plats: 5</option>
+          <option value="6" {% if top_10 == 6 %}selected="selected"{% endif %}>Plats: 6</option>
+          <option value="7" {% if top_10 == 7 %}selected="selected"{% endif %}>Plats: 7</option>
+          <option value="8" {% if top_10 == 8 %}selected="selected"{% endif %}>Plats: 8</option>
+          <option value="9" {% if top_10 == 9 %}selected="selected"{% endif %}>Plats: 9</option>
+          <option value="10" {% if top_10 == 10 %}selected="selected"{% endif %}>Plats: 10</option>
+        </select><br>
+
+        <label>Kategori: </label><br>
+        <select name="category">
+          <option value="1" {% if category == 1 %}selected="selected"{% endif %}>Betting</option>
+          <option value="2" {% if category == 2 %}selected="selected"{% endif %}>Case opening</option>
+          <option value="3" {% if category == 3 %}selected="selected"{% endif %}>Trade Bots</option>
+          <option value="4" {% if category == 4 %}selected="selected"{% endif %}>Trade Sites</option>
+          <option value="5" {% if category == 5 %}selected="selected"{% endif %}>Marketplaces</option>
+          <option value="6" {% if category == 6 %}selected="selected"{% endif %}>Misc</option>
+        </select><br>
+
+        <label>Sub Kategori (endast betting): </label><br>
+        <select name="sub_category">
+          <option value="1" {% if sub_category == 1 %}selected="selected"{% endif %}>Blackjack</option>
+          <option value="2" {% if sub_category == 2 %}selected="selected"{% endif %}>Coinflip</option>
+          <option value="3" {% if sub_category == 3 %}selected="selected"{% endif %}>Jackpot</option>
+        </select><br>
+
+        <input type="text" name="id" value="{{ id }}" style="display:none;">
+        <input type="submit" name="" value="Spara Ändring" class="btn">
+        <a href="{{ path_for('cms') }}" class="btn" id="close-btn">Stäng (spara inte)</a>
+      </form>
+    </div>
+  </div>
+{% endblock %}
