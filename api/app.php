@@ -49,6 +49,6 @@
 
   };
 
-  $app->add(new \App\Middleware\CmsErrors($container));
+  $app->add(new \App\Middleware\Authentication($container));
 
   require __DIR__."/routes.php";

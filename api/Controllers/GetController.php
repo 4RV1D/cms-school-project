@@ -14,4 +14,12 @@ class GetController extends Controller
 
   }
 
+  public function items($request, $response, $args) {
+
+  }
+
+  public function item($request, $response, $args) {
+
+  }
+
 }
