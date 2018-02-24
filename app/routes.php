@@ -21,34 +21,40 @@ $app->get('/', 'GetController:test');
 
 
 // GET one Item
-$app->get('/api/item[/{id}]', 'GetController:item');
+$app->get('/item[/{id}]', 'GetController:item');
 
 // GET multiple Items from Category or Category->Subcategory or all Items
-$app->get('/api/items[/{category}[/{subcategory}]]', 'GetController:items');
+$app->get('/items[/{category}[/{subcategory}]]', 'GetController:items');
+
+
 
 // POST add one Item
-$app->('/api/{apikey}', 'PostController:item');
+$app->post('/create/item', 'PostController:item');
 
 // POST add one Category
-$app->('/', 'PostController:category');
+/*$app->post('/', 'PostController:category');
 
 // POST add one Subcategory
-$app->('/', 'PostController:subcategory');
+$app->post('/', 'PostController:subcategory');
 
-// POST update Item
-$app->('/', 'UpdateController:item');
 
-// POST update Category
-$app->('/', 'UpdateController:category');
 
-// POST update Subcategory
-$app->('/', 'UpdateController:subcategory');
+// PUT update Item
+$app->put('/', 'UpdateController:item');
 
-// POST delete Item
-$app->('/', 'DeleteController:item');
+// PUT update Category
+$app->put('/', 'UpdateController:category');
 
-// POST delete Category
-$app->('/', 'DeleteController:category');
+// PUT update Subcategory
+$app->put('/', 'UpdateController:subcategory');
 
-// POST delete Subcategory
-$app->('/', 'DeleteController:subcategory');
+
+
+// DELETE delete Item
+$app->delete('/', 'DeleteController:item');
+
+// DELETE delete Category
+$app->delete('/', 'DeleteController:category');
+
+// DELETE delete Subcategory
+$app->delete('/', 'DeleteController:subcategory');*/
